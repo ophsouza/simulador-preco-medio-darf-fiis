@@ -35,8 +35,9 @@ Este é um aplicativo desktop feito em Python com interface gráfica (Tkinter + 
 
 ---
 
-## 📸 Imagens do App (opcional)
-*Adicione aqui prints do app em funcionamento*
+## 📸 Imagens do App 
+<img width="493" alt="Captura de Tela 2025-06-25 às 15 34 23" src="https://github.com/user-attachments/assets/4a4f43bc-7028-4639-915d-106222d030f0" />
+<img width="936" alt="Captura de Tela 2025-06-25 às 15 35 08" src="https://github.com/user-attachments/assets/07de15ed-adce-4add-820d-2e05de21ce6a" />
 
 ---
 
