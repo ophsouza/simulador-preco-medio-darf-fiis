@@ -137,10 +137,11 @@ class AppPrecoMedioFIIs:
         self.preco_entry.grid(row=2, column=1, padx=5, pady=2)
 
 
-        ttk.Label(entrada, text="Data (DD-MM-AAAA):").grid(row=3, column=0, sticky="e")
+        ttk.Label(entrada, text="Data (DD/MM/AAAA):").grid(row=3, column=0, sticky="e")
         self.data_compra_entry = ttk.Entry(entrada, width=15)
         self.data_compra_entry.grid(row=3, column=1, padx=5, pady=2)
-        self.data_compra_entry.insert(0, datetime.date.today().isoformat())
+        self.data_compra_entry.insert(0, datetime.date.today().strftime("%d/%m/%Y"))
+
 
 
         self.id_editando = None
@@ -185,6 +186,7 @@ class AppPrecoMedioFIIs:
             preco = float(self.preco_entry.get())
             data = self.data_compra_entry.get().strip()
             datetime.datetime.strptime(data, "%d/%m/%Y")
+
         except ValueError:
             messagebox.showerror("Erro", "Quantidade deve ser inteiro, preço número válido e data no formato AAAA-MM-DD.")
             return
@@ -284,7 +286,7 @@ class AppPrecoMedioFIIs:
         ttk.Label(entrada, text="Data (DD-MM-AAAA):").grid(row=3, column=0, sticky="e")
         self.data_venda_entry = ttk.Entry(entrada, width=15)
         self.data_venda_entry.grid(row=3, column=1, padx=5, pady=2)
-        self.data_venda_entry.insert(0, datetime.date.today().isoformat())
+        self.data_venda_entry.insert(0, datetime.date.today().strftime("%d/%m/%Y"))
 
 
         self.id_editando_venda = None
@@ -330,7 +332,7 @@ class AppPrecoMedioFIIs:
             data = self.data_venda_entry.get().strip()
             datetime.datetime.strptime(data, "%d/%m/%Y")
         except ValueError:
-            messagebox.showerror("Erro", "Quantidade deve ser inteiro, preço número válido e data no formato AAAA-MM-DD.")
+            messagebox.showerror("Erro", "Quantidade deve ser inteiro, preço número válido e data no formato DD-MM-AAAA.")
             return
         if not fii:
             messagebox.showerror("Erro", "Informe o nome do FII.")
